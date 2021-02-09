@@ -1,14 +1,12 @@
 const inverse = (arr, flag) => {
 
-    if (isNaN(flag)) {
+    if (typeof flag != "number") {
         return arr.reverse();
     }
 
-    if (flag >= 0) {
-        return arr.splice(0, flag).concat(arr.reverse());
-    } else {
-        var tmp = arr.splice(flag);
-        return arr.reverse().concat(tmp);
-    }
+    let tmp = [];
+
+    return (flag >= 0) ? arr.splice(0, flag).concat(arr.reverse()) :
+        (tmp = arr.splice(flag), arr.reverse().concat(tmp));
 
 };
