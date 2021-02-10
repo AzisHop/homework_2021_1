@@ -2,9 +2,9 @@
   * Переворачиваем массив
   * 
   * @param {array} arr - массив.
-  * @param {flag} flag - число, до которого массив останется в неизменном виде, может отсутствовать, тогда
+  * @param {number} flag - число, до которого массив останется в неизменном виде, может отсутствовать, тогда
   * произойдет реверс всего массива.
-  * @returns {reverse_arr}
+  * @returns {array}
   * @example
   * 
   * inverse([1,2,3,4,5]);
@@ -14,12 +14,14 @@
 const inverse = (arr, flag) => {
 
     if (typeof flag != "number") {
-        return arr.reverse();
+      return arr.reverse();
     }
 
-    let tmp = [];
-
-    return (flag >= 0) ? arr.splice(0, flag).concat(arr.reverse()) :
-        (tmp = arr.splice(flag), arr.reverse().concat(tmp));
+    if (flag >= 0) {
+      return arr.splice(0, flag).concat(arr.reverse());
+    } else {
+        var tmp = arr.splice(flag);
+        return arr.reverse().concat(tmp);
+    }
 
 };
