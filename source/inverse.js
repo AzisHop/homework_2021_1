@@ -13,7 +13,7 @@
 
 const inverse = (arr, flag) => {
 
-    if (typeof flag != "number") {
+    if (typeof flag !== "number") {
       return arr.reverse();
     }
 
