@@ -20,7 +20,7 @@ const inverse = (arr, flag) => {
     if (flag >= 0) {
       return arr.splice(0, flag).concat(arr.reverse());
     } else {
-        var tmp = arr.splice(flag);
+        const tmp = arr.splice(flag);
         return arr.reverse().concat(tmp);
     }
 
